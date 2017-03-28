@@ -1,0 +1,73 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mx-2">
+                    <div class="card-block p-2">
+                        <h1 class="text-center">Nova Conta</h1>
+                        <alert-notification [position]="'top-center'"></alert-notification>
+                        <hr>
+                        <form [formGroup]="registerForm" (ngSubmit)="register($event)">
+
+                            <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('name')}">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                <input [ngClass]="{'form-control-danger': validation('name')}" formControlName="name" type="text" class="form-control" placeholder="Nome completo">
+                            </div>
+                            <show-error
+                                [name]="'nome'" [input]="registerForm.controls['name']" >
+                            </show-error>
+
+                            <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('email')}">
+                                <span class="input-group-addon">@</span>
+                                <input [ngClass]="{'form-control-danger':validation('email')}" formControlName="email" type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <show-error
+                                [name]="'email'" [input]="registerForm.controls['email']" >
+                            </show-error>
+
+                            <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('password')}">
+                                <span class="input-group-addon"><i class="icon-lock"></i></span>
+                                <input
+                                validateEqual="password_confirmation" reverse="true"
+                                [ngClass]="{'form-control-danger':validation('password')}" formControlName="password" type="password" class="form-control" placeholder="Senha">
+                            </div>
+                            <show-error
+                                [name]="'senha'" [input]="registerForm.controls['password']" >
+                            </show-error>
+
+                            <div [ngClass]="{'has-danger has-feedback':validation('password_confirmation')}" class="input-group mb-2">
+                                <span class="input-group-addon"><i class="icon-lock"></i>
+                                </span>
+                                <input
+                                validateEqual="password" [ngModel]="password_confirmation"
+                                [ngClass]="{'form-control-danger':validation('password_confirmation')}"
+                                formControlName="password_confirmation" type="password" class="form-control" placeholder="Repitir senha">
+                            </div>
+                            <show-error
+                                [name]="'confirmação de senha'" [input]="registerForm.controls['password_confirmation']" >
+                            </show-error>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <button [routerLink]="['/login']" class="btn btn-primary" type="button">
+                                        <i class="fa fa-chevron-circle-left fa-lg m-t-2"></i> login
+                                    </button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button [disabled]="!registerForm.valid && !progress" type="submit" class="btn btn-primary"> Criar <i class="fa fa-send fa-lg m-t-2"> </i> </button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="card-footer bg-inverse p-2">
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

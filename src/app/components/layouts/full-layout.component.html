@@ -1,0 +1,73 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
+    <a class="navbar-brand" href="#"></a>
+    <ul class="nav navbar-nav hidden-md-down">
+        <li class="nav-item">
+            <a class="nav-link navbar-toggler sidebar-toggler" href="#">&#9776;</a>
+        </li>
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+                <img src="assets/img/avatars/odonto-avatar.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" dropdownMenu aria-labelledby="simple-dropdown">
+
+                <div class="dropdown-header text-center">
+                    <strong>Usuário</strong>
+                </div>
+                <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" [routerLink]="['/locked']"><i class="fa fa-shield"></i> Bloquear</a>
+                <a class="dropdown-item" href="#" (click)="logout()"><i class="fa fa-lock"></i> Sair</a>
+            </div>
+        </li>
+        <li class="nav-item hidden-md-down">
+            <a class="nav-link" href="#"><i class="fa fa-wrench"></i></a>
+        </li>
+    </ul>
+</header>
+
+<div class="app-body">
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard</a>
+                </li>
+
+                <li class="nav-item nav-dropdown" routerLinkActive="open">
+                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Clientes</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/clientes/new']"><i class="fa fa-plus-square"></i> Novo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/clientes']"><i class="fa fa-table"></i> Lista</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <breadcrumbs></breadcrumbs>
+        </ol>
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- /.conainer-fluid -->
+    </main>
+</div>
+
+<footer class="app-footer">
+    <a href="http://www.odontopaiva.com">OdondoPaiva</a> &copy; 2017.
+    <span class="float-right">developed by <a href="http://epsoftware.com">epsoftware</a>
+    </span>
+</footer>

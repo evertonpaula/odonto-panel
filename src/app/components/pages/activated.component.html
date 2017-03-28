@@ -1,0 +1,41 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mx-2">
+                    <div class="card-block p-1">
+                        <div class="row md-10">
+                            <div class="col-12">
+                                <h4 class="{{ data.error == null ? 'text-default' : data.error ? 'text-danger' : 'text-success'}} text-center mb-2"> <i class="icon-info icons font-5xl d-block m-t-2"></i></h4>
+                            </div>
+                        </div>
+                        <div class="row md-10">
+                            <div class="col-12">
+                                <h4 class="text-center mb-2"> {{ data.title }} </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <button [routerLink]="['/login']" class="btn btn-primary" type="button">
+                                    <i class="fa fa-chevron-circle-left fa-lg m-t-2"></i> login
+                                </button>
+                            </div>
+                            <div class="col-6 text-right">
+                                <button [routerLink]="['/sing-up']" class="btn btn-primary" type="button">
+                                    registrar <i class="fa fa-chevron-circle-right fa-lg m-t-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-inverse pt-1">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="text-center" > {{ data.message }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

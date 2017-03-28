@@ -1,0 +1,59 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-group mb-0">
+                    <alert-notification [position]="'top-center'"></alert-notification>
+                    <div class="card p-2">
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 col-xs-6">
+                                    <img class="rounded mx-auto d-block img-thumbnail mr-3 img-avatar" src="assets/img/avatars/odonto-avatar.jpg" alt="Generic placeholder image">
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-xs-6">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-xs-12">
+                                            <h5 class="text-right">
+                                                Para desbloquear digite sua senha
+                                                <i class="icon-lock icons font-2xl m-t-2"> </i>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-xs-12">
+                                            <form [formGroup]="lockedForm" (ngSubmit)="locked($event)">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <input formControlName="email" type="hidden" class="form-control">
+                                                        <div class="input-group mb-1">
+                                                            <div  [ngClass]="{'has-danger has-feedback':validation('password')}" class="input-prepend input-group mt-2">
+                                                                <span class="input-group-addon">
+                                                                    <i class="icon-key icons font-2xl m-t-2"></i>
+                                                                </span>
+                                                                <input  [ngClass]="{'form-control-danger':validation('password')}" formControlName="password"  class="form-control" placeholder="Senha" type="password">
+                                                                <span class="input-group-btn">
+                                                                    <button [disabled]="!lockedForm.valid || progress" class="btn btn-primary" type="submit">Desbloquear</button>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <show-error
+                                                            [name]="'senha'" [input]="lockedForm.controls['password']" >
+                                                        </show-error>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

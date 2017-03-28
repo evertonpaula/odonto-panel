@@ -1,0 +1,60 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-group mb-0">
+                    <alert-notification [position]="'top-center'"></alert-notification>
+                    <div class="card p-2">
+                        <form [formGroup]="loginForm" (ngSubmit)="login($event)">
+                            <div class="card-block">
+                                <h3>Acesse sua conta</h3>
+                                <hr>
+                                <div [ngClass]="{'has-danger has-feedback':validation('email')}" class="input-group mb-1">
+                                    <span class="input-group-addon"><i class="icon-user"></i>
+                                    </span>
+                                    <input formControlName="email" [ngClass]="{'form-control-danger':validation('email')}" type="email" class="form-control" placeholder="email">
+                                </div>
+                                <show-error
+                                    [name]="'email'" [input]="loginForm.controls['email']" >
+                                </show-error>
+
+                                <div [ngClass]="{'has-danger has-feedback':validation('password')}" class="input-group mb-2">
+                                    <span class="input-group-addon"><i class="icon-lock"></i>
+                                    </span>
+                                    <input [ngClass]="{'form-control-danger':validation('password')}" formControlName="password" type="password" class="form-control" placeholder="senha">
+                                </div>
+                                <show-error
+                                    [name]="'senha'" [input]="loginForm.controls['password']" >
+                                </show-error>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button [disabled]="!loginForm.valid || progress" type="submit" class="btn btn-primary px-2"> Login
+                                            <i *ngIf="progress" class="fa fa-spin fa-circle-o-notch"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <a [routerLink]="['/forget-password']">
+                                            <button type="button" class="btn btn-link px-0">Esqueci a senha?</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card card-inverse bg-inverse py-3 hidden-md-down" style="width:44%">
+                        <div class="card-block text-center">
+                            <div>
+                                <h2>Registrar-se</h2>
+                                <p>Você ainda não possui um cadastro.</p>
+                                <a [routerLink]="['/sing-up']">
+                                    <button type="button" class="btn btn-primary mt-1">Registrar-se agora!</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
