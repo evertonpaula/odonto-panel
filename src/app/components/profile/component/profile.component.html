@@ -1,0 +1,57 @@
+<div class="animated fadeIn">
+    <tabset [justified]="true">
+        <tab heading="Informações Pessoais">
+            <head></head>
+            <form [formGroup]="profileForm" (ngSubmit)="saveProfile($event)">
+                <hr>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('first_name')}">
+                            <span class="input-group-addon"><i class="icon-user"></i>
+                            </span>
+                            <input [ngClass]="{'form-control-danger': validation('first_name')}" formControlName="first_name" type="text" class="form-control" placeholder="Primeiro nome">
+                        </div>
+                        <show-error
+                            [name]="'nome'" [input]="profileForm.controls['first_name']" >
+                        </show-error>
+                    </div>
+                    <div class="col-4">
+                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('last_name')}">
+                            <span class="input-group-addon"><i class="icon-user"></i>
+                            </span>
+                            <input [ngClass]="{'form-control-danger': validation('last_name')}" formControlName="last_name" type="text" class="form-control" placeholder="Sobrenome">
+                        </div>
+                        <show-error
+                            [name]="'sobrenome'" [input]="profileForm.controls['last_name']" >
+                        </show-error>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('phone')}">
+                            <span class="input-group-addon"><i class="icon-screen-smartphone icons"></i>
+                            </span>
+                            <input [ngClass]="{'form-control-danger': validation('phone')}" formControlName="phone" type="text" class="form-control" placeholder="Telefone ou celular para contato">
+                        </div>
+                        <show-error
+                            [name]="'celular'" [input]="profileForm.controls['phone']" >
+                        </show-error>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+
+                    </div>
+                    <div class="col-6 text-right">
+                        <button [disabled]="!profileForm.valid && !progress" type="submit" class="btn btn-primary"><i class="fa fa-save fa-lg m-t-2"></i> atualizar</button>
+                    </div>
+                </div>
+            </form>
+
+        </tab>
+
+        <tab heading="Login">
+
+        </tab>
+  </tabset>
+</div>

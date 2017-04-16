@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
-import { EmailValidator } from './../../validators/email.validator';
-import { AuthService } from './../../services/auth/auth.service';
-import { AlertService } from './../../components/alert/alert.service';
+import { EmailValidator } from './../../../validators/email.validator';
+import { AuthService } from './../../../services/auth/auth.service';
+import { AlertService } from './../../../components/alert/alert.service';
 
 @Component({
   templateUrl: 'forget.password.component.html'

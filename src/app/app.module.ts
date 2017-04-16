@@ -7,12 +7,12 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DropdownModule } from 'ng2-bootstrap/dropdown';
 import { TabsModule } from 'ng2-bootstrap/tabs';
-import { NAV_DROPDOWN_DIRECTIVES } from './shared/nav-dropdown.directive';
+import { NAV_DROPDOWN_DIRECTIVES } from './shared/directives/nav-dropdown.directive';
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { SIDEBAR_TOGGLE_DIRECTIVES } from './shared/sidebar.directive';
-import { AsideToggleDirective } from './shared/aside.directive';
-import { BreadcrumbsComponent } from './shared/breadcrumb.component';
+import { SIDEBAR_TOGGLE_DIRECTIVES } from './shared/directives/sidebar.directive';
+import { AsideToggleDirective } from './shared/directives/aside.directive';
+import { BreadcrumbsComponent } from './shared/components/breadcrumb.component';
 import { SharedModule } from './shared/shared.module';
 
 //Modules

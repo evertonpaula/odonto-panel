@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { p404Component } from './404.component';
-import { p500Component } from './500.component';
-import { LoginComponent } from './login.component';
-import { RegisterComponent } from './register.component';
-import { LockedComponent } from './locked.component';
-import { ForgetPasswordComponent } from './forget.password.component';
-import { ActivatedComponent } from './activated.component';
-import { RecoverPasswordComponent } from './recover.password.component';
+import { p404Component } from './404/404.component';
+import { p500Component } from './500/500.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { LockedComponent } from './locked/locked.component';
+import { ForgetPasswordComponent } from './forget-password/forget.password.component';
+import { ActivatedComponent } from './activated/activated.component';
+import { RecoverPasswordComponent } from './recover-password/recover.password.component';
 
 const routes: Routes = [
     {

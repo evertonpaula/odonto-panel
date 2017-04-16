@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
-import { EqualValidator } from './../../validators/equal.validator';
-import { EmailValidator } from './../../validators/email.validator';
-import { AuthService } from './../../services/auth/auth.service';
-import { AlertService } from './../../components/alert/alert.service';
+import { EqualValidator } from './../../../validators/equal.validator';
+import { EmailValidator } from './../../../validators/email.validator';
+import { AuthService } from './../../../services/auth/auth.service';
+import { AlertService } from './../../../components/alert/alert.service';
 
 
 @Component({

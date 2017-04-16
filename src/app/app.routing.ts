@@ -19,6 +19,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './components/dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'profile',
+        loadChildren: './components/profile/profile.module#ProfileModule'
       }
     ]
   }

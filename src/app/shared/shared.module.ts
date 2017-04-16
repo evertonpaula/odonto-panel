@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ShowErrorComponent } from './show.error.component';
+import { ShowErrorComponent } from './components/show.error.component';
 
 @NgModule({
   imports: [ CommonModule ],

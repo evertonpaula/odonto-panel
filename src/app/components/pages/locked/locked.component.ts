@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
-import { AuthService } from './../../services/auth/auth.service';
-import { AlertService } from './../../components/alert/alert.service';
+import { AuthService } from './../../../services/auth/auth.service';
+import { AlertService } from './../../../components/alert/alert.service';
 
 @Component({
   templateUrl: 'locked.component.html'
