@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DropdownModule } from 'ng2-bootstrap/dropdown';
+import { BsDropdownModule } from 'ng2-bootstrap/dropdown';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { NAV_DROPDOWN_DIRECTIVES } from './shared/directives/nav-dropdown.directive';
 
@@ -38,7 +38,7 @@ import { AuthService } from './services/auth/auth.service';
     HttpModule,
     FormsModule,
     AppRoutingModule,
-    DropdownModule.forRoot(),
+    BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
     SharedModule,

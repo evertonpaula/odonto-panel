@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-12">
+        <div class="drop-area"
+             (mouseover)="onMouseOver()"
+             (mouseleave)="onMouseLeave()"
+             (dragover)="onDragOver($event)"
+             (dragleave)="onDragLeave()"
+             (dragenter)="onDragEnter()"
+             (click)="onClick($event)"
+             (drop)="onDrop($event)"
+             [class.drop-active]="droped"
+             [class.drop-disabled]="disabled"
+        >
+            <span
+                class="drop-area-button"
+                [class.drop-area-button-active]="droped"
+                [class.drop-disabled]="disabled"
+            >
+                <i class="icon-cloud-upload icons font-2xl"></i>
+            </span>
+            <span
+                class="drop-area-label"
+                [class.drop-active]="droped"
+                [class.drop-disabled]="disabled"
+            >
+                {{ label }}
+            </span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+
+    </div>
+</div>

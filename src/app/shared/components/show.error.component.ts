@@ -9,7 +9,8 @@ import { FormControl } from '@angular/forms';
       <div *ngFor="let error of getErrors()" class="alert alert-danger" role="alert">
             {{ error.message }}
       </div>
-    </div>`
+    </div>
+  `
 })
 export class ShowErrorComponent {
 

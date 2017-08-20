@@ -40,8 +40,8 @@ export class RecoverPasswordComponent implements OnInit {
       this.recoverForm.controls['token'].patchValue(token);
       this.authService.getTokenForRecover({token})
                       .subscribe(
-                          data => this.getEmail(data.json()),
-                          err => this.invalidToken(err.json())
+                          data => this.getEmail(data),
+                          err => this.invalidToken(err)
                       );
   }
 
@@ -67,8 +67,8 @@ export class RecoverPasswordComponent implements OnInit {
     this.progress = true;
     this.authService.updatePassword(this.recoverForm.value)
                     .subscribe(
-                        data => this.alert(data.json(), 'success'),
-                        err => this.alert(err.json(), 'error')
+                        data => this.alert(data, 'success'),
+                        err => this.alert(err, 'error')
                     );
   }
 

@@ -11,6 +11,9 @@ export class AuthService {
   private user:User;
 
   constructor( private http:HttpService) {
+      if ( this.userActivated ) {
+          this.user = JSON.parse(localStorage.getItem('currentUser'));
+      }
   }
 
   public userActivated() {

@@ -39,8 +39,8 @@ export class LockedComponent implements OnInit {
       this.progress = true;
       this.authService.getUser(this.lockedForm.value)
                       .subscribe(
-                          data => this.authService.setUser(data.json()),
-                          err => this.alert(err.json(), 'error'),
+                          data => this.authService.setUser(data),
+                          err => this.alert(err, 'error'),
                           () => this.redirect()
                       );
   }

@@ -1,0 +1,21 @@
+<div class="input-group mb-1"
+    [ngClass]="{'has-danger has-feedback':validation()}"
+>
+    <span class="input-group-addon">
+        <i class="{{ icon }}"></i>
+    </span>
+    <select
+        required="{{ required }}"
+        class="ee-select form-control"
+        [ngClass]="{'form-control-danger': validation()}"
+        (focus)="onFocus()"
+        (focusout)="onFocusOut()"
+    >
+        <option> {{ label }}</option>
+        <option value="all" *ngIf="allOptions"> Todas Opções</option>
+
+    </select>
+    <span class="input-group-addon">
+        <i class="icons" [ngClass]="expanded ? 'icon-arrow-down' : 'icon-arrow-left'"></i>
+    </span>
+</div>

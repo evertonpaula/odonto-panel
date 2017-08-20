@@ -32,8 +32,8 @@ export class ForgetPasswordComponent implements OnInit {
       this.progress = true;
       this.authService.recoverPassword(this.forgetForm.value)
                       .subscribe(
-                          data => this.alert(data.json(), 'success'),
-                          err => this.alert(err.json(), 'error')
+                          data => this.alert(data, 'success'),
+                          err => this.alert(err, 'error')
                       );
   }
 

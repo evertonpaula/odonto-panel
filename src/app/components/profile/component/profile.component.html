@@ -1,53 +1,150 @@
+<alert-notification [position]="'top-center'"></alert-notification>
 <div class="animated fadeIn">
     <tabset [justified]="true">
         <tab heading="Informações Pessoais">
-            <head></head>
-            <form [formGroup]="profileForm" (ngSubmit)="saveProfile($event)">
-                <hr>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('first_name')}">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                            <input [ngClass]="{'form-control-danger': validation('first_name')}" formControlName="first_name" type="text" class="form-control" placeholder="Primeiro nome">
+            <hr>
+            <div class="row">
+                <div class="col-8">
+                    <form [formGroup]="profileForm" (ngSubmit)="saveProfile($event)">
+                        <div class="card card-accent-primary">
+                            <div class="card-header">
+                                <strong>Perfil</strong>
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('first_name')}">
+                                            <span class="input-group-addon"><i class="icon-user"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.first_name" [ngClass]="{'form-control-danger': validation('first_name')}" formControlName="first_name" type="text" class="form-control" placeholder="Primeiro nome">
+                                        </div>
+                                        <show-error
+                                            [name]="'nome'" [input]="profileForm.controls['first_name']" >
+                                        </show-error>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('last_name')}">
+                                            <span class="input-group-addon"><i class="icon-user"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.last_name" [ngClass]="{'form-control-danger': validation('last_name')}" formControlName="last_name" type="text" class="form-control" placeholder="Sobrenome">
+                                        </div>
+                                        <show-error
+                                            [name]="'sobrenome'" [input]="profileForm.controls['last_name']" >
+                                        </show-error>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('phone')}">
+                                            <span class="input-group-addon"><i class="icon-screen-smartphone icons"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.phone" [ngClass]="{'form-control-danger': validation('phone')}" formControlName="phone" type="text" class="form-control" placeholder="Telefone ou celular">
+                                        </div>
+                                        <show-error
+                                            [name]="'celular'" [input]="profileForm.controls['phone']" >
+                                        </show-error>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <show-error
-                            [name]="'nome'" [input]="profileForm.controls['first_name']" >
-                        </show-error>
-                    </div>
-                    <div class="col-4">
-                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('last_name')}">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                            <input [ngClass]="{'form-control-danger': validation('last_name')}" formControlName="last_name" type="text" class="form-control" placeholder="Sobrenome">
-                        </div>
-                        <show-error
-                            [name]="'sobrenome'" [input]="profileForm.controls['last_name']" >
-                        </show-error>
-                    </div>
 
-                    <div class="col-4">
-                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('phone')}">
-                            <span class="input-group-addon"><i class="icon-screen-smartphone icons"></i>
-                            </span>
-                            <input [ngClass]="{'form-control-danger': validation('phone')}" formControlName="phone" type="text" class="form-control" placeholder="Telefone ou celular para contato">
+                        <div class="card card-accent-primary">
+                            <div class="card-header">
+                                <strong>Endereço</strong>
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('address_type')}">
+                                            <span class="input-group-addon"><i class="icon-layers icons"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.address.type.name" [ngClass]="{'form-control-danger': validation('address_type')}" formControlName="address_type" type="text" class="form-control" placeholder="Tipo">
+                                        </div>
+                                        <show-error
+                                            [name]="'address_type'" [input]="profileForm.controls['address_type']" >
+                                        </show-error>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('logradouro')}">
+                                            <span class="input-group-addon"><i class="icon-location-pin icons"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.address.address" [ngClass]="{'form-control-danger': validation('logradouro')}" formControlName="logradouro" type="text" class="form-control" placeholder="Logradouro">
+                                        </div>
+                                        <show-error
+                                            [name]="'logradouro'" [input]="profileForm.controls['logradouro']" >
+                                        </show-error>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('city')}">
+                                            <span class="input-group-addon"><i class="icon-pin icons"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.address.city" [ngClass]="{'form-control-danger': validation('city')}" formControlName="city" type="text" class="form-control" placeholder="Cidade">
+                                        </div>
+                                        <show-error
+                                            [name]="'city'" [input]="profileForm.controls['city']" >
+                                        </show-error>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('zipcode')}">
+                                            <span class="input-group-addon"><i class="icon-envelope icons"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.address.zipcode" [ngClass]="{'form-control-danger': validation('zipcode')}" formControlName="zipcode" type="text" class="form-control" placeholder="Cod. Postal">
+                                        </div>
+                                        <show-error
+                                            [name]="'zipcode'" [input]="profileForm.controls['zipcode']" >
+                                        </show-error>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <!-- <div class="input-group mb-1" [ngClass]="{'has-danger has-feedback':validation('country')}">
+                                            <span class="input-group-addon"><i class="icon-globe icons"></i>
+                                            </span>
+                                            <input [(ngModel)]="profile.address.country.name" [ngClass]="{'form-control-danger': validation('country')}" formControlName="country" type="text" class="form-control" placeholder="País">
+                                        </div>
+                                        <show-error
+                                            [name]="'country'" [input]="profileForm.controls['country']" >
+                                        </show-error> -->
+                                        <ee-select></ee-select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <show-error
-                            [name]="'celular'" [input]="profileForm.controls['phone']" >
-                        </show-error>
+
+                        <div class="row">
+                            <div class="col-12 text-right">
+                                <button [disabled]="!profileForm.valid && !progress" type="submit" class="btn btn-primary"><i class="fa fa-save fa-lg m-t-2"></i> atualizar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="col-4">
+                    <div class="card card-accent-primary">
+                        <div class="card-header">
+                            <strong>Foto</strong>
+                        </div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-12">
+                                    <img class="img-thumbnail" src="{{ profile.image.file.url || 'assets/img/avatars/odonto-avatar.jpg' }}" alt="{{ profile.image.file.name }}" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <upload
+                                        [label]="'Coloque uma foto de perfil.'"
+                                        [disabled]="false"
+                                        (onResponse)="uploadOnResponse($event)"
+                                    ></upload>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-6">
-
-                    </div>
-                    <div class="col-6 text-right">
-                        <button [disabled]="!profileForm.valid && !progress" type="submit" class="btn btn-primary"><i class="fa fa-save fa-lg m-t-2"></i> atualizar</button>
-                    </div>
-                </div>
-            </form>
-
+            </div>
         </tab>
 
         <tab heading="Login">

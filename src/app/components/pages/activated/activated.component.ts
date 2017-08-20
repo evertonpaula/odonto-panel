@@ -25,8 +25,8 @@ export class ActivatedComponent implements OnInit {
       let token = this.route.snapshot.params['token'];
       this.authService.activatedAccount({token})
                       .subscribe(
-                          data => this.alert(data.json(), 'success'),
-                          err => this.alert(err.json(), 'error')
+                          data => this.alert(data, 'success'),
+                          err => this.alert(err, 'error')
                       );
   }
 

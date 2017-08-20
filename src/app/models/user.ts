@@ -1,4 +1,4 @@
-export interface User {
+export class User {
     id: number;
     name: string;
     email: string;
@@ -6,8 +6,8 @@ export interface User {
     uuid: string;
     activated: string|null;
     locked:boolean;
-    created_at:string|null;
-    updated_at:string|null;
-    deleted_at:string|null;
+    created_at:Date|null;
+    updated_at:Date|null;
+    deleted_at:Date|null;
     image:string|null;
 }

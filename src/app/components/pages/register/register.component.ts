@@ -34,8 +34,8 @@ export class RegisterComponent {
     this.progress = true;
     this.authService.registerUser(this.registerForm.value)
                     .subscribe(
-                        data => this.alert(data.json(), 'success'),
-                        err => this.alert(err.json(), 'error')
+                        data => this.alert(data, 'success'),
+                        err => this.alert(err, 'error')
                     );
   }
 

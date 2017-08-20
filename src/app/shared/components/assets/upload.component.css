@@ -1,0 +1,35 @@
+.drop-area {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #ccc;
+    background-color: #e4e5e6;
+    color: #4a4040;
+    text-align: center;
+    border-radius: 2px;
+}
+.drop-active {
+    color: #000;
+    border-color: #000;
+    cursor: pointer;
+}
+.drop-area-label {
+    display: table-row;
+    text-align: center;
+    vertical-align: middle;
+}
+.drop-area-button {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #6fc7e6;
+    font-size: 2.0em;
+}
+.drop-area-button-active {
+    color: #21a8d8;
+    cursor: pointer;
+}
+.drop-disabled {
+    cursor: no-drop;
+}
